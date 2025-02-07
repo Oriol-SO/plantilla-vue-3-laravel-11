@@ -1,6 +1,7 @@
 <template>
     <v-app>
-        <v-main class="ma-0">
+        <Header/>
+        <v-main class="mx-2">
             <router-view v-slot="{ Component }">
                 <transition name="fade" mode="out-in">
                     <component :is="Component" />
@@ -10,7 +11,11 @@
     </v-app>
 </template> 
 <script>
+import Header from '../components/Header.vue';
 export default {
     name: 'DefaultLayout',
+    components: {
+        Header,
+    },
 }
 </script>
